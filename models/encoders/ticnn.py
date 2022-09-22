@@ -45,7 +45,7 @@ class TiCNN(Module):
                 bn_args_dict[i] = bn_args_no_ep
 
         self.encoder = Sequential(OrderedDict([
-            ('conv1', ConvBlock(2, 16, 64, 8, 27, bn_args_dict[1])),
+            ('conv1', ConvBlock(1, 16, 64, 8, 27, bn_args_dict[1])),
             ('conv2', ConvBlock(16, 32, 3, 1, 1, bn_args_dict[2])),
             ('conv3', ConvBlock(32, 64, 3, 1, 1, bn_args_dict[3])),
             ('conv4', ConvBlock(64, 64, 3, 1, 1, bn_args_dict[4])),
