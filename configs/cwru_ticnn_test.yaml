@@ -5,7 +5,7 @@ test:
   split: val
   n_batch: 100
   n_episode: 4
-  n_way: 10
+  n_way: 5
   k_shot: 1
   k_query: 15
   length: 1024
