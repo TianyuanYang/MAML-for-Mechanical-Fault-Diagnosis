@@ -13,7 +13,7 @@ The target of this method is one-dimensional mechanical fault signal data.
 
 ### Datasets
 Preprocess the data into the shape of `(category, number, length, 1)`, e.g. `(10, 100, 1024, 1)`, and save them as npy files. 
-The naming format is `dataset_split_condition.npy`, e.g. `CWRU_2HP_train.npy`.
+The naming format is `dataset_condition_split.npy`, e.g. `CWRU_2HP_train.npy`.
 
 Add the register module at the end of `datasets\bearingdataset.py` in the same way as in the file.
 
