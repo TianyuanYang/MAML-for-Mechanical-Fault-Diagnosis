@@ -20,6 +20,12 @@ Add the register module at the end of `datasets\bearingdataset.py` in the same w
 ### Configurations
 Add or modify configuration files in `configs/`.
 
+
+### Modifying the model
+The backbone network consists of the encoder and the classifier, taking care that the shape of the output of the encoder matches the shape of the input required of the classifier.
+
+If you add new model files, remember to update `models/classifiers/__init__.py` and `models/encoders/__init__.py`.
+
 ### Training
 ```
 python train.py --config=configs/cwru_ticnn_train.yaml
