@@ -55,6 +55,8 @@ optimizer_args:
   weight_decay: 5.e-4
   schedule: step
   milestones:
-    - 100
+    - 50
+    - 80
+  gamma: 0.1
 
-epoch: 200
+epoch: 100
