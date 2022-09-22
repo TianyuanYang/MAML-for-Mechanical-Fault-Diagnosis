@@ -1,0 +1,31 @@
+dataset: cwru-dataset
+test:
+  root_path: 'E:\yty\CWRU\100'
+  condition: '1HP'
+  split: val
+  n_batch: 100
+  n_episode: 4
+  n_way: 10
+  k_shot: 1
+  k_query: 15
+  length: 1024
+
+load: ./save/ticnn_cwru-dataset_10_way_1_shot/max-va.pth
+
+inner_args:
+  reset_classifier: True
+  n_step: 5
+  encoder_lr: 0.01
+  classifier_lr: 0.01
+  momentum: 0.9
+  weight_decay: 5.e-4
+  first_order: False
+#  frozen:
+#    - logistic
+#    - conv1
+#    - conv2
+#    - conv3
+#    - conv4
+#    - conv5
+
+epoch: 10

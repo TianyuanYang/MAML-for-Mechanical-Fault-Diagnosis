@@ -1,0 +1,60 @@
+dataset: cwru-dataset
+train:
+  root_path: '\data\CWRU\100'
+  condition: '3HP'
+  split: train
+  n_batch: 100
+  n_episode: 4
+  n_way: 5
+  k_shot: 1
+  k_query: 15
+  length: 1024
+val:
+  root_path: '\data\CWRU\100'
+  condition: '2HP'
+  split: val
+  n_batch: 100
+  n_episode: 4
+  n_way: 5
+  k_shot: 1
+  k_query: 15
+  length: 1024
+
+encoder: ticnn
+encoder_args:
+  bn_args:
+    track_running_stats: True
+    episodic:
+      - conv1
+      - conv2
+      - conv3
+      - conv4
+      - conv5
+classifier: logistic
+
+inner_args:
+  reset_classifier: True
+  n_step: 5
+  encoder_lr: 0.01
+  classifier_lr: 0.01
+  momentum: 0.9
+  weight_decay: 5.e-4
+  first_order: False
+#  frozen:
+#    - logistic
+#    - conv1
+#    - conv2
+#    - conv3
+#    - conv4
+#    - conv5
+
+
+optimizer: sgd
+optimizer_args:
+  lr: 0.01
+  weight_decay: 5.e-4
+  schedule: step
+  milestones:
+    - 100
+
+epoch: 200
