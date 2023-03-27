@@ -10,12 +10,18 @@ The target of this method is one-dimensional mechanical fault signal data.
 ### Environment
 * Python 3
 * PyTorch > 1.0
+* Other packages: numpy, pyyaml, tqdm, tensorboardX
 
 ### Datasets
 Preprocess the data into the shape of `(category, number, length, 1)`, e.g. `(10, 100, 1024, 1)`, and save them as npy files. 
 The naming format is `dataset_condition_split.npy`, e.g. `CWRU_2HP_train.npy`.
 
 Add the register module at the end of `datasets\bearingdataset.py` in the same way as in the file.
+
+An example of pre-processing for [CWRU data](https://drive.google.com/file/d/1T5G6yEe8Fnv07jdgpHrWHHfu0xZwz_5k/view?usp=share_link) is given here.
+```
+python preprocessing.py --data_dir=$path_to_data_folder$ --out_dir=$path_to_save_folder$ --data_name=CWRU
+```
 
 ### Configurations
 Add or modify configuration files in `configs/`.
