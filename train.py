@@ -14,6 +14,8 @@ import yaml
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
+from tensorboardX import SummaryWriter
+
 
 def main(config):
     random.seed(0)
